@@ -3,7 +3,15 @@ import { images } from "@/constants/images";
 import { Tabs } from "expo-router";
 import { Image, ImageBackground, Text } from "react-native";
 
-const TabIcons = ({ focused, icon, title }) => {
+const TabIcons = ({
+  focused,
+  icon,
+  title,
+}: {
+  focused: boolean;
+  icon: any;
+  title: string;
+}) => {
   if (!focused) {
     return (
       <Image
