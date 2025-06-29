@@ -42,3 +42,22 @@ export const TrendingMovies = async () => {
   }
   return [];
 };
+
+export const fetchMovieDetails = async (movieId: string) => {
+  try {
+    const res = await fetch(
+      `${TMDB_CONFIG.Base_URL}/movie/${movieId}?${TMDB_CONFIG.API_KEY}`,
+      {
+        method: "GET",
+        headers: TMDB_CONFIG.Headers,
+      }
+    );
+    if (!res) {
+      throw new Error("Faild to fetch movie details");
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
