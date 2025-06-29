@@ -37,11 +37,10 @@ const Search = () => {
         resizeMode="cover"
       />
       <FlatList
-        className=" px-5"
         numColumns={3}
         columnWrapperStyle={{
           justifyContent: "flex-start",
-          gap: 16,
+          gap: 5,
           marginVertical: 16,
         }}
         contentContainerStyle={{

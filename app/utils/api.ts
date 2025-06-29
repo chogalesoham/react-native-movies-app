@@ -25,3 +25,20 @@ export const fetchMovies = async ({ query }: { query: string }) => {
   }
   return [];
 };
+
+export const TrendingMovies = async () => {
+  const endpoint = "/trending/movie/day?page=1";
+  const response = await fetch(`${TMDB_CONFIG.Base_URL}${endpoint}`, {
+    method: "GET",
+    headers: TMDB_CONFIG.Headers,
+  });
+  if (!response.ok) {
+    throw new Error("Failed to fetch trending movies");
+  }
+  const data = await response.json();
+  if (Array.isArray(data.results)) {
+    const shuffled = data.results.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 12);
+  }
+  return [];
+};

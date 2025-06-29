@@ -5,6 +5,7 @@ import React from "react";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
 import MovieCart from "../Componets/MovieCart";
 import SearchBar from "../Componets/SearchBar";
+import TrendingMovies from "../Componets/TrendingMovies";
 import { fetchMovies } from "../utils/api";
 import useFetch from "../utils/useFetch";
 
@@ -25,7 +26,7 @@ export default function Index() {
     <>
       <Image
         source={images.bg}
-        className=" flex-1 absolute w-full z-0 right-0 left-0"
+        className=" flex-1 absolute w-full z-0 "
         resizeMode="cover"
       />
       <Image source={icons.logo} className="w-16 h-14 mt-20 mb-5 mx-auto" />
@@ -33,7 +34,8 @@ export default function Index() {
         onPress={() => router.push("/search")}
         placeholder="Search Your Favorite Movie"
       />
-      <Text className=" text-lg text-white font-bold mt-5 mb-3 ">
+      <TrendingMovies />
+      <Text className=" text-xl text-white font-bold mt-5 mb-3 ">
         Latest Movies
       </Text>
     </>
