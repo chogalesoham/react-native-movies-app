@@ -11,7 +11,7 @@ interface MovieInfoProps {
 
 const MovieInfo = ({ label, value }: MovieInfoProps) => (
   <View className=" flex-col justify-center mt-5">
-    <Text className=" text-light-200 font-normal text-sm">{label}</Text>
+    <Text className=" text-light-200 font-semibold text-2xl">{label}</Text>
     <Text className=" text-light-100 font-bold text-sm">{value || "N/A"}</Text>
   </View>
 );
@@ -32,14 +32,14 @@ const MovieDetails = () => {
           />
         </View>
         <View className=" flex-col items-start justify-center mt-5 px-5">
-          <Text className=" text-white font-bold text-xl">{movie?.title}</Text>
+          <Text className=" text-white font-bold text-2xl">{movie?.title}</Text>
           <View className=" flex-row items-center gap-x-1 mt-2">
             <Text className=" text-light-200">
               {movie?.release_date?.split("_")[0]}
             </Text>
             <Text className=" text-light-200 text-sm">{movie?.runtime}m</Text>
           </View>
-          <View className=" flex-row items-center bg-dark-100 px-1 rounded-md gap-x-1 mt-2">
+          <View className=" flex-row items-center py-2 px-4 bg-dark-100 rounded-full gap-x-1 mt-2">
             <Image source={icons.star} className=" size-4" />
             <Text className=" text-white font-bold text-sm">
               {Math.round(movie?.vote_average ?? 0)}/10

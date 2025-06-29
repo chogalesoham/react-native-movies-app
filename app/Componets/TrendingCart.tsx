@@ -5,9 +5,9 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
 const TrendingCart = ({ movies, index }: any) => {
-  const { movie_id, title, poster_path } = movies;
+  const { id, title, poster_path } = movies;
   return (
-    <Link href={`/movies/${movie_id}`} asChild>
+    <Link href={`/movies/${id}`} asChild>
       <TouchableOpacity className=" w-32 mx-1 relative p-2 rounded-lg border-gray-600 border">
         <Image
           source={{
