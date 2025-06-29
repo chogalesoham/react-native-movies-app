@@ -23,7 +23,11 @@ export default function Index() {
 
   const renderHeader = () => (
     <>
-      <Image source={images.bg} className="absolute w-full z-0" />
+      <Image
+        source={images.bg}
+        className=" flex-1 absolute w-full z-0 right-0 left-0"
+        resizeMode="cover"
+      />
       <Image source={icons.logo} className="w-16 h-14 mt-20 mb-5 mx-auto" />
       <SearchBar
         onPress={() => router.push("/search")}
@@ -52,7 +56,7 @@ export default function Index() {
   }
 
   return (
-    <View className="flex-1 bg-primary">
+    <View className="flex-1 bg-primary w-full">
       <FlatList
         data={Movies?.slice(0, 50) || []}
         renderItem={({ item }) => <MovieCart {...item} />}
